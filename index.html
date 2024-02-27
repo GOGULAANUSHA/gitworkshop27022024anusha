@@ -1,0 +1,38 @@
+<html>
+<title>
+my example1
+</title>
+<body>
+<label1>name:</label1> <input id="name"></input><br>
+<label1>gender:</label1> <!-- <input id="gender"/> -->
+<select id ="gender">
+    <option>Male</option>
+     <option>Female</option>
+</select>
+<input type="submit" onclick="show()"/>
+
+
+<script>
+function show()  {
+    var name = document.getElementById("name").value;
+ //    var gender = document.getElementById("gender").value;
+        var genderArray = document.getElementById("gender");
+        var selectedIndex = genderArray.selectedIndex;
+        var gender = genderArray[selectedIndex].value;
+        console.log('genderArray='+JSON.stringify(genderArray));
+        console.log('selectedIndex='+selectedIndex);
+        console.log('gender='+gender);
+         var message = '';
+      if (gender === 'Male') { 
+          message = 'HELLO Mr.' + name; 
+  } else if (gender === 'Female'){
+          message = 'HELLO MISS.' + name;
+  } else {
+    message = 'HELLO' + name;
+}
+    console.log(message);
+    alert(message);
+}
+</script>
+</body>
+</html>
